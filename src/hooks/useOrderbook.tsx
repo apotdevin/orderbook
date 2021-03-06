@@ -85,6 +85,8 @@ export const useOrderbook = () => {
     client.onclose = () => {
       console.log('Client Closed');
     };
+
+    return () => client.close();
   }, []);
 
   const format = ({
