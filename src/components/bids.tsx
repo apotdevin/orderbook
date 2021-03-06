@@ -10,8 +10,8 @@ export const Bids: FC<{ entries: OrderEntry[]; max: number }> = ({
 }) => {
   const tableData = entries.map(b => ({
     ...b,
-    depthStr: formatCurrency(b.depth),
-    sizeStr: formatCurrency(b.size),
+    depthStr: formatCurrency(b.depth, 0),
+    sizeStr: formatCurrency(b.size, 0),
     priceStr: <Typo.bid>{formatCurrency(b.price)}</Typo.bid>,
     max,
   }));

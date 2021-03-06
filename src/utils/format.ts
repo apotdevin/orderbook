@@ -1,4 +1,4 @@
-export const formatCurrency = (x: number) => {
-  const fixed = x.toFixed(2);
+export const formatCurrency = (x: number, fixedNumbers = 2) => {
+  const fixed = x.toFixed(fixedNumbers);
   return fixed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
