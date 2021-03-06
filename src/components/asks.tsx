@@ -1,19 +1,14 @@
 import { FC } from 'react';
 import { OrderEntry } from 'src/hooks/useOrderbook';
+import { TableRow, TableStyles } from 'src/components/table';
 import { formatCurrency } from 'src/utils/format';
-import { Table } from './table';
 import { Typo } from './typo';
 
-export const Asks: FC<{ asks: OrderEntry[]; max: number }> = ({
-  asks,
+export const Asks: FC<{ entries: OrderEntry[]; max: number }> = ({
+  entries,
   max,
 }) => {
-  const columns = [
-    { Header: 'PRICE', accessor: 'priceStr' },
-    { Header: 'SIZE', accessor: 'sizeStr' },
-    { Header: 'TOTAL', accessor: 'depthStr' },
-  ];
-  const tableData = asks.map(b => ({
+  const tableData = entries.map(b => ({
     ...b,
     depthStr: formatCurrency(b.depth),
     sizeStr: formatCurrency(b.size),
@@ -22,8 +17,26 @@ export const Asks: FC<{ asks: OrderEntry[]; max: number }> = ({
   }));
 
   return (
-    <>
-      <Table tableData={tableData} tableColumns={columns} inverted={true} />
-    </>
+    <TableStyles>
+      <table>
+        <tr>
+          <td>PRICE</td>
+          <td>SIZE</td>
+          <td>TOTAL</td>
+        </tr>
+        {tableData.map(entry => (
+          <TableRow
+            key={entry.price}
+            inverted={true}
+            maxDepth={max}
+            currentValue={entry.depth}
+          >
+            <td>{entry.priceStr}</td>
+            <td>{entry.sizeStr}</td>
+            <td>{entry.depthStr}</td>
+          </TableRow>
+        ))}
+      </table>
+    </TableStyles>
   );
 };
