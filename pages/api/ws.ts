@@ -13,8 +13,8 @@ export const config = {
 export default createProxyMiddleware({
   ...(!isProduction && {
     pathRewrite: { '^/api/ws': '' },
-    changeOrigin: true,
   }),
+  changeOrigin: true,
   target: externalUrl,
   ws: true,
   secure: isProduction,
