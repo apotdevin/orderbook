@@ -48,7 +48,7 @@ export const OrderBook: FC = () => {
 
   return (
     <S.wrapper>
-      <Options spread={spread} />
+      <Options spread={spread} price={maxBid.price} />
       <S.row>
         <Bids entries={finalAsks} max={max} />
         <Asks entries={finalAsks} max={max} />

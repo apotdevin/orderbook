@@ -35,11 +35,14 @@ const S = {
   `,
 };
 
-export const Options: FC<{ spread: number }> = ({ spread }) => {
+export const Options: FC<{ spread: number; price: number }> = ({
+  spread,
+  price,
+}) => {
   const { limit } = useContextState();
   const dispatch = useContextDispatch();
 
-  const spreadPercent = Math.round(spread * 10000) / 100;
+  const spreadPercent = Math.round((spread / price) * 10000) / 100;
 
   return (
     <S.row>
