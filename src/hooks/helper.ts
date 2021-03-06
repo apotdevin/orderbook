@@ -76,8 +76,6 @@ export const groupByPrice = (
     );
 
     final.push(reduced);
-
-    console.log({ reduced });
   });
 
   const sorted = sortBy(final, 'price');
