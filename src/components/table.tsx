@@ -1,7 +1,6 @@
-import { useMemo } from 'react';
 import styled, { css } from 'styled-components';
 import { useTable, useSortBy, useGlobalFilter } from 'react-table';
-import { DepthBar } from './depth';
+import { Colors } from 'src/styles/Colors';
 
 type StyledTableProps = {
   withBorder?: boolean;
@@ -19,20 +18,15 @@ const Styles = styled.div`
     }
 
     tr {
-      transform: scale(1);
-
       :last-child {
         td {
           border-bottom: 0;
         }
       }
     }
+
     th,
     td {
-      position: relative;
-      top: 0;
-      right: 0;
-
       font-size: ${({ fontSize }: StyledTableProps) => fontSize || '14px'};
       text-align: right;
       margin: 0;
@@ -57,6 +51,20 @@ const Styles = styled.div`
   }
 `;
 
+const Row = styled.tr<{
+  inverted?: boolean;
+  maxDepth: number;
+  currentValue: number;
+}>`
+  background-image: ${({ inverted, maxDepth, currentValue }) => {
+    const percent = 100 - Math.round((currentValue / maxDepth) * 100);
+
+    return inverted
+      ? css`linear-gradient(to left, transparent ${percent}%, ${Colors.lightRed} ${percent}%);`
+      : css`linear-gradient(to right, transparent ${percent}%, ${Colors.lightGreen} ${percent}%);`;
+  }};
+`;
+
 type TableProps = {
   inverted?: boolean;
   tableData: any[];
@@ -76,8 +84,8 @@ export const Table: React.FC<TableProps> = ({
   withBorder,
   fontSize,
 }) => {
-  const data = useMemo(() => tableData, [tableData]);
-  const columns = useMemo(() => tableColumns, [tableColumns]);
+  const data = tableData;
+  const columns = tableColumns;
 
   const {
     getTableProps,
@@ -110,7 +118,13 @@ export const Table: React.FC<TableProps> = ({
           {rows.map((row, index) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()} key={index}>
+              <Row
+                {...row.getRowProps()}
+                key={`${(row.original as { price: number }).price}-${index}`}
+                inverted={inverted}
+                maxDepth={(row.original as { max: number }).max || 1}
+                currentValue={(row.original as { depth: number }).depth || 0}
+              >
                 {row.cells.map((cell, index) => {
                   return (
                     <td {...cell.getCellProps()} key={index}>
@@ -118,12 +132,7 @@ export const Table: React.FC<TableProps> = ({
                     </td>
                   );
                 })}
-                <DepthBar
-                  inverted={inverted}
-                  max={(row.original as { max: number }).max || 1}
-                  value={(row.original as { depth: number }).depth || 0}
-                />
-              </tr>
+              </Row>
             );
           })}
         </tbody>
