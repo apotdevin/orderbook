@@ -1,4 +1,8 @@
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import getConfig from 'next/config';
+
+const { serverRuntimeConfig = {} } = getConfig() || {};
+const { externalUrl } = serverRuntimeConfig;
 
 export const config = {
   api: {
@@ -7,7 +11,7 @@ export const config = {
 };
 
 export default createProxyMiddleware({
-  target: 'wss://www.cryptofacilities.com/ws/v1',
+  target: externalUrl,
   changeOrigin: true,
   ws: true,
   logLevel: 'debug',

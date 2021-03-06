@@ -1,6 +1,10 @@
 import { useEffect, useReducer } from 'react';
 import { w3cwebsocket as WebSocket } from 'websocket';
+import getConfig from 'next/config';
 import { getCurrentOrders, groupByPrice } from './helper';
+
+const { publicRuntimeConfig } = getConfig();
+const { wsUrl } = publicRuntimeConfig;
 
 export type OrderEntry = {
   price: number;
@@ -49,7 +53,7 @@ export const useOrderbook = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    const client = new WebSocket('ws://localhost:3000/api/ws');
+    const client = new WebSocket(wsUrl);
 
     client.onopen = () => {
       console.log('WebSocket Client Connected');
