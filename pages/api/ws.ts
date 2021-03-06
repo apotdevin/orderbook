@@ -2,7 +2,7 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 import getConfig from 'next/config';
 
 const { serverRuntimeConfig = {} } = getConfig() || {};
-const { externalUrl } = serverRuntimeConfig;
+const { externalUrl, isProduction } = serverRuntimeConfig;
 
 export const config = {
   api: {
@@ -14,6 +14,7 @@ export default createProxyMiddleware({
   target: externalUrl,
   changeOrigin: true,
   ws: true,
+  secure: isProduction,
   logLevel: 'debug',
   pathRewrite: { '^/api/ws': '' },
 });
