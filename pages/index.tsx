@@ -1,7 +1,8 @@
 import { FC } from 'react';
+import { HomeView } from 'src/views/home';
 
 const Index: FC = () => {
-  return <div>Welcome to SkeletonApp</div>;
+  return <HomeView />;
 };
 
 export default Index;

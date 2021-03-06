@@ -9,9 +9,10 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        background: white;
-        color: black;
-        font-family: 'Manrope', sans-serif;
+        font-size: 16px;
+        background: grey;
+        color: white;
+        font-family: 'Roboto', sans-serif;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

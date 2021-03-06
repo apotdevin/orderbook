@@ -43,10 +43,11 @@ export default class MyDocument extends Document {
             content="Your own LnPay Server"
             key="description"
           />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
             rel="stylesheet"
-          ></link>
+          />
         </Head>
         <body>
           <Main />
