@@ -19,23 +19,27 @@ export const Asks: FC<{ entries: OrderEntry[]; max: number }> = ({
   return (
     <TableStyles>
       <table>
-        <tr>
-          <td>PRICE</td>
-          <td>SIZE</td>
-          <td>TOTAL</td>
-        </tr>
-        {tableData.map(entry => (
-          <TableRow
-            key={entry.price}
-            inverted={true}
-            maxDepth={max}
-            currentValue={entry.depth}
-          >
-            <td>{entry.priceStr}</td>
-            <td>{entry.sizeStr}</td>
-            <td>{entry.depthStr}</td>
-          </TableRow>
-        ))}
+        <thead>
+          <tr>
+            <td>PRICE</td>
+            <td>SIZE</td>
+            <td>TOTAL</td>
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.map((entry, index) => (
+            <TableRow
+              key={`${entry.price}-${index}`}
+              inverted={true}
+              maxDepth={max}
+              currentValue={entry.depth}
+            >
+              <td>{entry.priceStr}</td>
+              <td>{entry.sizeStr}</td>
+              <td>{entry.depthStr}</td>
+            </TableRow>
+          ))}
+        </tbody>
       </table>
     </TableStyles>
   );

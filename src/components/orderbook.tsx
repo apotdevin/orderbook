@@ -28,16 +28,24 @@ const S = {
   row: styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
   `,
 };
 
-export const OrderBook: FC = () => {
-  const { group, limit } = useContextState();
+const OrderBook: FC = () => {
+  const { groupStep, limit } = useContextState();
   const { asks, bids, format } = useOrderbook();
 
-  const [finalBids, maxBid, minBid] = format({ group, limit, entries: bids });
-  const [finalAsks, minAsk, maxAsk] = format({ group, limit, entries: asks });
+  const [finalBids, maxBid, minBid] = format({
+    group: groupStep,
+    limit,
+    entries: bids,
+  });
+  const [finalAsks, minAsk, maxAsk] = format({
+    group: groupStep,
+    limit,
+    entries: asks,
+    isAsk: true,
+  });
 
   if (!finalAsks?.length && !finalBids.length) {
     return <Loading />;
@@ -51,9 +59,11 @@ export const OrderBook: FC = () => {
     <S.wrapper>
       <Options spread={spread} price={maxBid.price} />
       <S.row>
-        <Bids entries={finalAsks} max={max} />
+        <Bids entries={finalBids} max={max} />
         <Asks entries={finalAsks} max={max} />
       </S.row>
     </S.wrapper>
   );
 };
+
+export default OrderBook;

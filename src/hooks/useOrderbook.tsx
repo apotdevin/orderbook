@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from 'react';
 import { w3cwebsocket as WebSocket } from 'websocket';
-import { getCurrentOrders } from './helper';
+import { getCurrentOrders, groupByPrice } from './helper';
 
 export type OrderEntry = {
   price: number;
@@ -31,6 +31,10 @@ const defaultEntry = { price: 0, size: 0, depth: 0 };
 const initialState: State = { feed: '', product_id: '', asks: [], bids: [] };
 
 const reducer = (state: State, action: Action) => {
+  // if (state.asks.length > 50) {
+  //   return state;
+  // }
+
   const { data } = action;
 
   const { asks, bids, feed, product_id } = data;
@@ -80,14 +84,18 @@ export const useOrderbook = () => {
   }, []);
 
   const format = ({
+    group,
     limit,
     entries,
+    isAsk = false,
   }: {
     group: number;
     limit: number;
     entries: OrderEntry[];
+    isAsk?: boolean;
   }): [OrderEntry[], OrderEntry, OrderEntry] => {
-    const sliced = entries.slice(0, limit);
+    const grouped = groupByPrice(group, entries, isAsk);
+    const sliced = grouped.slice(0, limit);
     return [
       sliced,
       sliced[0] || defaultEntry,

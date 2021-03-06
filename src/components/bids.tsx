@@ -19,23 +19,27 @@ export const Bids: FC<{ entries: OrderEntry[]; max: number }> = ({
   return (
     <TableStyles>
       <table>
-        <tr>
-          <td>TOTAL</td>
-          <td>SIZE</td>
-          <td>PRICE</td>
-        </tr>
-        {tableData.map(entry => (
-          <TableRow
-            key={entry.price}
-            inverted={false}
-            maxDepth={max}
-            currentValue={entry.depth}
-          >
-            <td>{entry.depthStr}</td>
-            <td>{entry.sizeStr}</td>
-            <td>{entry.priceStr}</td>
-          </TableRow>
-        ))}
+        <thead>
+          <tr>
+            <td>TOTAL</td>
+            <td>SIZE</td>
+            <td>PRICE</td>
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.map((entry, index) => (
+            <TableRow
+              key={`${entry.price}-${index}`}
+              inverted={false}
+              maxDepth={max}
+              currentValue={entry.depth}
+            >
+              <td>{entry.depthStr}</td>
+              <td>{entry.sizeStr}</td>
+              <td>{entry.priceStr}</td>
+            </TableRow>
+          ))}
+        </tbody>
       </table>
     </TableStyles>
   );

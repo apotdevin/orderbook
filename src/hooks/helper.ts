@@ -1,4 +1,4 @@
-import { sortBy } from 'lodash';
+import { groupBy, sortBy } from 'lodash';
 import { OrderEntry } from './useOrderbook';
 
 export const getCurrentOrders = (
@@ -36,4 +36,52 @@ export const getCurrentOrders = (
   });
 
   return enriched;
+};
+
+export const groupByPrice = (
+  group: number,
+  entries: OrderEntry[],
+  isAsk = false
+) => {
+  if (group === 0.5) {
+    return entries;
+  }
+
+  const normalized = entries.map(entry => ({
+    ...entry,
+    price: isAsk
+      ? Math.ceil(entry.price / group) * group
+      : Math.floor(entry.price / group) * group,
+  }));
+
+  const grouped = groupBy(normalized, 'price');
+
+  const prices = Object.keys(grouped);
+
+  const final: OrderEntry[] = [];
+
+  prices.forEach(price => {
+    const entry = grouped[price];
+    if (!entry) return;
+
+    const reduced = entry.reduce(
+      (prev, current) => {
+        return {
+          ...prev,
+          size: prev.size + current.size,
+          depth: Math.max(prev.depth, current.depth),
+        };
+      },
+      { price: Number(price), size: 0, depth: 0 }
+    );
+
+    final.push(reduced);
+
+    console.log({ reduced });
+  });
+
+  const sorted = sortBy(final, 'price');
+  const correctOrder = isAsk ? sorted : sorted.reverse();
+
+  return correctOrder;
 };
