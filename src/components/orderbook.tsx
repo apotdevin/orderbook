@@ -4,6 +4,7 @@ import { useOrderbook } from 'src/hooks/useOrderbook';
 import styled from 'styled-components';
 import { Asks } from './asks';
 import { Bids } from './bids';
+import { Loading } from './loading';
 import { Options } from './options';
 
 const S = {
@@ -39,7 +40,7 @@ export const OrderBook: FC = () => {
   const [finalAsks, minAsk, maxAsk] = format({ group, limit, entries: asks });
 
   if (!finalAsks?.length && !finalBids.length) {
-    return <S.wrapper>Hello</S.wrapper>;
+    return <Loading />;
   }
 
   const max = Math.max(minBid.depth, maxAsk.depth);

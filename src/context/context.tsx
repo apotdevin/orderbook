@@ -23,7 +23,7 @@ const stateReducer = (state: State, action: ActionType): State => {
     case 'change':
       return { ...state, spread: action.spread };
     case 'changeLimit':
-      return { ...state, limit: Math.max(action.limit, 10) };
+      return { ...state, limit: Math.min(Math.max(action.limit, 10), 100) };
     default:
       return state;
   }
@@ -33,7 +33,7 @@ const ContextProvider: FC = ({ children }) => {
   const [state, dispatch] = useReducer(stateReducer, {
     spread: 0,
     group: 0.5,
-    limit: 10,
+    limit: 20,
   });
 
   return (
