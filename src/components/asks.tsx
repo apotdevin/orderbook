@@ -4,10 +4,11 @@ import { TableRow, TableStyles } from 'src/components/table';
 import { formatCurrency } from 'src/utils/format';
 import { Typo } from './typo';
 
-export const Asks: FC<{ entries: OrderEntry[]; max: number }> = ({
-  entries,
-  max,
-}) => {
+export const Asks: FC<{
+  entries: OrderEntry[];
+  max: number;
+  isMobile: boolean;
+}> = ({ entries, max, isMobile }) => {
   const tableData = entries.map(b => ({
     ...b,
     depthStr: formatCurrency(b.depth, 0),
@@ -15,6 +16,8 @@ export const Asks: FC<{ entries: OrderEntry[]; max: number }> = ({
     priceStr: <Typo.ask>{formatCurrency(b.price)}</Typo.ask>,
     max,
   }));
+
+  const finalData = isMobile ? tableData.reverse() : tableData;
 
   return (
     <TableStyles>
@@ -27,7 +30,7 @@ export const Asks: FC<{ entries: OrderEntry[]; max: number }> = ({
           </tr>
         </thead>
         <tbody>
-          {tableData.map((entry, index) => (
+          {finalData.map((entry, index) => (
             <TableRow
               key={`${entry.price}-${index}`}
               inverted={true}

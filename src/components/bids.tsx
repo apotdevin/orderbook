@@ -4,10 +4,11 @@ import { TableRow, TableStyles } from 'src/components/table';
 import { formatCurrency } from 'src/utils/format';
 import { Typo } from './typo';
 
-export const Bids: FC<{ entries: OrderEntry[]; max: number }> = ({
-  entries,
-  max,
-}) => {
+export const Bids: FC<{
+  entries: OrderEntry[];
+  max: number;
+  isMobile: boolean;
+}> = ({ entries, max, isMobile }) => {
   const tableData = entries.map(b => ({
     ...b,
     depthStr: formatCurrency(b.depth, 0),
@@ -21,9 +22,9 @@ export const Bids: FC<{ entries: OrderEntry[]; max: number }> = ({
       <table>
         <thead>
           <tr>
-            <td>TOTAL</td>
+            <td>{isMobile ? 'PRICE' : 'TOTAL'}</td>
             <td>SIZE</td>
-            <td>PRICE</td>
+            <td>{isMobile ? 'TOTAL' : 'PRICE'}</td>
           </tr>
         </thead>
         <tbody>
@@ -33,10 +34,11 @@ export const Bids: FC<{ entries: OrderEntry[]; max: number }> = ({
               inverted={false}
               maxDepth={max}
               currentValue={entry.depth}
+              left={isMobile}
             >
-              <td>{entry.depthStr}</td>
+              <td>{isMobile ? entry.priceStr : entry.depthStr}</td>
               <td>{entry.sizeStr}</td>
-              <td>{entry.priceStr}</td>
+              <td>{isMobile ? entry.depthStr : entry.priceStr}</td>
             </TableRow>
           ))}
         </tbody>

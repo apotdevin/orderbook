@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { useContextState } from 'src/context/context';
 import { useOrderbook } from 'src/hooks/useOrderbook';
-import styled from 'styled-components';
+import { useWindowDimensions } from 'src/hooks/useWindowDimensions';
+import styled, { css } from 'styled-components';
 import { Asks } from './asks';
 import { Bids } from './bids';
 import { Loading } from './loading';
@@ -25,8 +26,13 @@ const S = {
     align-items: center;
   `,
 
-  row: styled.div`
+  row: styled.div<{ isMobile: boolean }>`
     display: flex;
+    ${({ isMobile }) =>
+      isMobile &&
+      css`
+        flex-direction: column-reverse;
+      `}
     justify-content: center;
   `,
 };
@@ -34,6 +40,10 @@ const S = {
 const OrderBook: FC = () => {
   const { groupStep, limit } = useContextState();
   const { asks, bids, format } = useOrderbook();
+
+  const { width } = useWindowDimensions();
+
+  const isMobile = width <= 600;
 
   const [finalBids, maxBid, minBid] = format({
     group: groupStep,
@@ -57,10 +67,11 @@ const OrderBook: FC = () => {
 
   return (
     <S.wrapper>
-      <Options spread={spread} price={maxBid.price} />
-      <S.row>
-        <Bids entries={finalBids} max={max} />
-        <Asks entries={finalAsks} max={max} />
+      {!isMobile && <Options spread={spread} price={maxBid.price} />}
+      <S.row isMobile={isMobile}>
+        <Bids entries={finalBids} max={max} isMobile={isMobile} />
+        {isMobile && <Options spread={spread} price={maxBid.price} />}
+        <Asks entries={finalAsks} max={max} isMobile={isMobile} />
       </S.row>
     </S.wrapper>
   );

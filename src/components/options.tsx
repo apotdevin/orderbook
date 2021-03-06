@@ -4,6 +4,10 @@ import { useContextDispatch, useContextState } from 'src/context/context';
 import styled from 'styled-components';
 
 const S = {
+  wrapper: styled.div`
+    margin: 16px;
+  `,
+
   title: styled.div`
     width: 100%;
     text-align: center;
@@ -16,7 +20,7 @@ const S = {
     justify-content: space-between;
     width: 100%;
     max-width: 300px;
-    margin-bottom: 16px;
+    margin: 8px;
     font-size: 14px;
   `,
 
@@ -57,7 +61,7 @@ export const Options: FC<{ spread: number; price: number }> = ({
   const spreadPercent = Math.round((spread / price) * 10000) / 100;
 
   return (
-    <>
+    <S.wrapper>
       <S.row>
         <S.column>
           <S.text>{`Group: ${groupStep}`}</S.text>
@@ -101,6 +105,6 @@ export const Options: FC<{ spread: number; price: number }> = ({
       <S.row>
         <S.title>{`${spread} Spread (${spreadPercent.toFixed(2)}%)`}</S.title>
       </S.row>
-    </>
+    </S.wrapper>
   );
 };

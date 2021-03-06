@@ -37,12 +37,15 @@ export const TableRow = styled.tr<{
   inverted?: boolean;
   maxDepth: number;
   currentValue: number;
+  left?: boolean;
 }>`
-  background-image: ${({ inverted, maxDepth, currentValue }) => {
+  background-image: ${({ inverted, maxDepth, currentValue, left }) => {
     const percent = 100 - Math.round((currentValue / maxDepth) * 100);
 
     return inverted
       ? css`linear-gradient(to left, transparent ${percent}%, ${Colors.lightRed} ${percent}%);`
-      : css`linear-gradient(to right, transparent ${percent}%, ${Colors.lightGreen} ${percent}%);`;
+      : css`linear-gradient(to ${
+          left ? 'left' : 'right'
+        }, transparent ${percent}%, ${Colors.lightGreen} ${percent}%);`;
   }};
 `;
