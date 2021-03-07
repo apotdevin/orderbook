@@ -39,10 +39,6 @@ type State = {
 };
 
 type ActionType =
-  | {
-      type: 'change';
-      spread: number;
-    }
   | { type: 'changeLimit'; limit: number }
   | { type: 'changeGroup'; group: number };
 
@@ -53,8 +49,6 @@ export const DispatchContext = createContext<Dispatch | undefined>(undefined);
 
 const stateReducer = (state: State, action: ActionType): State => {
   switch (action.type) {
-    case 'change':
-      return { ...state, spread: action.spread };
     case 'changeLimit':
       return { ...state, limit: Math.min(Math.max(action.limit, 10), 100) };
     case 'changeGroup': {
@@ -65,8 +59,6 @@ const stateReducer = (state: State, action: ActionType): State => {
         groupStep: getStep(group),
       };
     }
-    default:
-      return state;
   }
 };
 
