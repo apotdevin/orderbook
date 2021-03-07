@@ -77,13 +77,12 @@ const useOrderbook = (url: string) => {
     entries: OrderEntry[];
     isAsk?: boolean;
   }): [OrderEntry[], OrderEntry, OrderEntry] => {
+    if (!entries.length) {
+      return [[], defaultEntry, defaultEntry];
+    }
     const grouped = groupByPrice(group, entries, isAsk);
     const sliced = grouped.slice(0, limit);
-    return [
-      sliced,
-      sliced[0] || defaultEntry,
-      sliced[sliced.length - 1] || defaultEntry,
-    ];
+    return [sliced, sliced[0], sliced[sliced.length - 1]];
   };
 
   return { ...state, format, readyState };
