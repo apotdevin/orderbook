@@ -9,6 +9,7 @@
    per second vs per week?
 
    - Check that the server can scale appropriately to handle the amount of requests. Server side caching can be enabled or the server can be put behind cloudflare to further optimize the speed and reliability of the webpage. Being a simple single page application scaling should be straightforward.
+   - Double check that the websocket can also handle the increased amount of requests and connections.
    - With thousands of views per second maybe monetize it somehow? 😆
 
 3. What was the most useful feature that was added to the latest version of your chosen language?
@@ -49,7 +50,7 @@
 
 4. How would you track down a performance issue in production? Have you ever had to do this?
 
-   - Going directly to the logs. There are different services that help with tracking performance issues in applications. For example [LogRocket](https://logrocket.com/signup/) can help with monitoring websocket connections. I have used SpeedCurve to monitor an enterprise level application in production and development environments. SpeedCurve helps keep track of different web metrics such as Time to Interactive, Largest Contentful Paint and Speed Index. I have also used [Apollo Studio](https://www.apollographql.com/studio/observe/) to check performance issues for a production GraphQL server.
+   Going directly to the logs. There are different services that help with tracking performance issues in applications. For example [LogRocket](https://logrocket.com/signup/) can help with monitoring websocket connections. I have used SpeedCurve to monitor an enterprise level application in production and development environments. SpeedCurve helps keep track of different web metrics such as Time to Interactive, Largest Contentful Paint and Speed Index. I have also used [Apollo Studio](https://www.apollographql.com/studio/observe/) to check performance issues for a production GraphQL server.
 
 5. Can you describe common security concerns to consider for a frontend developer?
 
