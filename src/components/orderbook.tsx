@@ -46,7 +46,7 @@ const OrderBook: FC<{ url: string }> = ({ url }) => {
   if (readyState < 1) {
     return (
       <S.wrapper>
-        Trying to connect to websocket...
+        Connecting to websocket...
         <Loading />
       </S.wrapper>
     );

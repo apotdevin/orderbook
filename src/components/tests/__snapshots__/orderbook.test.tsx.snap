@@ -371,7 +371,7 @@ exports[`Components Orderbook matches connecting snapshot 1`] = `
   <div
     class="orderbook__wrapper-ypat8y-1 gKWLzb"
   >
-    Trying to connect to websocket...
+    Connecting to websocket...
     <div
       class="loading__Wrapper-e7lqu1-0 dNIoQG"
     >
