@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bs": "yarn build && yarn start",
+    "bs": "npm i && yarn build && yarn start",
     "dev": "next",
     "build": "next build",
     "generate": "graphql-codegen --config codegen.yml",
