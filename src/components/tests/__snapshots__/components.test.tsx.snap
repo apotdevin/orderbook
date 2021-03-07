@@ -381,7 +381,29 @@ exports[`Components Header matches snapshot 1`] = `
   <div
     class="header__Wrapper-w5cr8-0 bJCuER"
   >
-    Orderbook Example
+    <span
+      aria-label="rocket"
+      role="img"
+      style="margin-right: 8px;"
+    >
+      🚀
+    </span>
+    BTC Orderbook
+    <span
+      aria-label="rocket"
+      role="img"
+      style="margin: 0px 8px;"
+    >
+      🚀
+    </span>
+    by
+    <a
+      class="header__Link-w5cr8-1 jDmxqq"
+      href="https://twitter.com/tonyioi"
+      target="__blank"
+    >
+      @tonyioi
+    </a>
   </div>
 </DocumentFragment>
 `;

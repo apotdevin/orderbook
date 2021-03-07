@@ -11,6 +11,30 @@ const Wrapper = styled.div`
   margin-bottom: 32px;
 `;
 
+const Link = styled.a`
+  margin-left: 8px;
+  text-decoration: none;
+  color: orange;
+
+  :hover {
+    color: darkorange;
+  }
+`;
+
 export const Header = () => {
-  return <Wrapper>Orderbook Example</Wrapper>;
+  return (
+    <Wrapper>
+      <span role="img" aria-label={'rocket'} style={{ marginRight: '8px' }}>
+        🚀
+      </span>
+      BTC Orderbook
+      <span role="img" aria-label={'rocket'} style={{ margin: '0 8px' }}>
+        🚀
+      </span>
+      by
+      <Link href={'https://twitter.com/tonyioi'} target={'__blank'}>
+        @tonyioi
+      </Link>
+    </Wrapper>
+  );
 };
