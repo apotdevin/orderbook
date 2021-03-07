@@ -40,6 +40,10 @@ type TableRowProps = {
   left?: boolean;
 };
 
+// TableRow styled component uses the attributes feature
+// as an optimization since creating CSS classes is a
+// heavyweight operation. This way the styles are passed
+// as inline styles to the component.
 export const TableRow = styled.tr.attrs<TableRowProps>(
   ({ inverted, maxDepth, currentValue, left }) => {
     const percent = 100 - Math.round((currentValue / maxDepth) * 100);

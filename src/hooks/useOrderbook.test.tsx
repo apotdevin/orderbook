@@ -6,7 +6,7 @@ const mockLastMessage = jest.fn();
 
 jest.mock('react-use-websocket', () => {
   return jest.fn(() => ({
-    sendMessage: jest.fn(),
+    sendJsonMessage: jest.fn(),
     readyState: mockedReadyState(),
     lastJsonMessage: mockLastMessage(),
   }));

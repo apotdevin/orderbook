@@ -44,28 +44,33 @@ const reducer = (state: State, action: Action) => {
 const useOrderbook = (url: string) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const { sendMessage, lastJsonMessage, readyState } = useWebSocket(url, {
+  const { sendJsonMessage, lastJsonMessage, readyState } = useWebSocket(url, {
     retryOnError: true,
     reconnectAttempts: 10,
     reconnectInterval: 3000,
   });
 
   useEffect(() => {
+    // Only send first message if the websocket is correctly connected.
     if (readyState !== 1) return;
-    sendMessage(
-      JSON.stringify({
-        event: 'subscribe',
-        feed: 'book_ui_1',
-        product_ids: ['PI_XBTUSD'],
-      })
-    );
-  }, [readyState, sendMessage]);
+
+    // This message is required so that the server knows
+    // we want to subscribe to this data stream.
+    sendJsonMessage({
+      event: 'subscribe',
+      feed: 'book_ui_1',
+      product_ids: ['PI_XBTUSD'],
+    });
+  }, [readyState, sendJsonMessage]);
 
   useEffect(() => {
     if (!lastJsonMessage) return;
+    // Dispatch a reducer action when a new message is received
     dispatch({ data: lastJsonMessage });
   }, [lastJsonMessage]);
 
+  // This function groups and limits the amount of
+  // orders based on the values provided by the user.
   const format = ({
     group,
     limit,

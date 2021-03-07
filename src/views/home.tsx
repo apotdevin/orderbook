@@ -12,6 +12,11 @@ const { wsUrl } = publicRuntimeConfig || {
 
 export const LoadingComponent = () => <Loading />;
 
+// The Orderbook component uses the window dimensions to
+// correctly set some stylings. By having a dynamic non
+// SSR import we can avoid loading it in the server where
+// there is now window available. Loading on the server
+// would cause the component to not be styled correctly.
 const OrderBook = dynamic(() => import('../components/orderbook'), {
   loading: LoadingComponent,
   ssr: false,
