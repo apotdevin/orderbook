@@ -41,7 +41,7 @@ const reducer = (state: State, action: Action) => {
   return { feed, product_id, asks: newAsks, bids: newBids };
 };
 
-export const useOrderbook = (url: string) => {
+const useOrderbook = (url: string) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const { sendMessage, lastJsonMessage, readyState } = useWebSocket(url, {
@@ -88,3 +88,5 @@ export const useOrderbook = (url: string) => {
 
   return { ...state, format, readyState };
 };
+
+export default useOrderbook;

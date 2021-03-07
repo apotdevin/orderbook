@@ -15,7 +15,7 @@ export const getWindowDimensions = (): WindowDimensions => {
   };
 };
 
-export const useWindowDimensions = (delay = 250) => {
+const useWindowDimensions = (delay = 250) => {
   const [windowDimensions, setWindowDimensions] = React.useState(
     getWindowDimensions()
   );
@@ -34,3 +34,5 @@ export const useWindowDimensions = (delay = 250) => {
 
   return windowDimensions;
 };
+
+export default useWindowDimensions;

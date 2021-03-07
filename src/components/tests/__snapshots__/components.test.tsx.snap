@@ -386,6 +386,34 @@ exports[`Components Header matches snapshot 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Components Loading matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="loading__Wrapper-e7lqu1-0 dNIoQG"
+  >
+    <span
+      class="css-0"
+    >
+      <span
+        class="css-t5z7rz"
+      />
+      <span
+        class="css-180eqmy"
+      />
+      <span
+        class="css-10qunde"
+      />
+      <span
+        class="css-1ct7tzo"
+      />
+      <span
+        class="css-1cubgjj"
+      />
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Components TableRow matches inverted left snapshot 1`] = `
 <DocumentFragment>
   <table>

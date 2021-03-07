@@ -10,7 +10,7 @@ const { wsUrl } = publicRuntimeConfig || {
   wsUrl: 'ws://localhost:3000/api/ws',
 };
 
-const LoadingComponent = () => <Loading />;
+export const LoadingComponent = () => <Loading />;
 
 const OrderBook = dynamic(() => import('../components/orderbook'), {
   loading: LoadingComponent,

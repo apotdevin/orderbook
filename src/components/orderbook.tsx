@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useContextState } from 'src/context/context';
-import { useOrderbook } from 'src/hooks/useOrderbook';
-import { useWindowDimensions } from 'src/hooks/useWindowDimensions';
+import useOrderbook from 'src/hooks/useOrderbook';
+import useWindowDimensions from 'src/hooks/useWindowDimensions';
 import styled, { css } from 'styled-components';
 import { Asks } from './asks';
 import { Bids } from './bids';

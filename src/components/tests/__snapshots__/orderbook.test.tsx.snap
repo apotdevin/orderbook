@@ -1,6 +1,372 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Components Orderbook matches snapshot 1`] = `
+exports[`Components Orderbook matches connected no bids or asks snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="loading__Wrapper-e7lqu1-0 dNIoQG"
+  >
+    <span
+      class="css-0"
+    >
+      <span
+        class="css-t5z7rz"
+      />
+      <span
+        class="css-180eqmy"
+      />
+      <span
+        class="css-10qunde"
+      />
+      <span
+        class="css-1ct7tzo"
+      />
+      <span
+        class="css-1cubgjj"
+      />
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components Orderbook matches connected snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="orderbook__wrapper-ypat8y-1 gKWLzb"
+  >
+    <div
+      class="options__wrapper-sc-1wxkfq2-0 iLoTFX"
+    >
+      <div
+        class="options__row-sc-1wxkfq2-2 sUSpG"
+      >
+        <div
+          class="options__column-sc-1wxkfq2-3 bFEMcp"
+        >
+          <div
+            class="options__text-sc-1wxkfq2-5 lelrqU"
+          >
+            Group: 0.5
+          </div>
+          <div
+            class="options__buttons-sc-1wxkfq2-6 kXUnru"
+          >
+            <button
+              class="options__button-sc-1wxkfq2-4 bKjZNU"
+              data-testid="decreaseChangeGroup"
+            >
+              <svg
+                fill="none"
+                height="14"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="5"
+                  x2="19"
+                  y1="12"
+                  y2="12"
+                />
+              </svg>
+            </button>
+            <button
+              class="options__button-sc-1wxkfq2-4 bKjZNU"
+              data-testid="increaseChangeGroup"
+            >
+              <svg
+                fill="none"
+                height="14"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="12"
+                  x2="12"
+                  y1="5"
+                  y2="19"
+                />
+                <line
+                  x1="5"
+                  x2="19"
+                  y1="12"
+                  y2="12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="options__column-sc-1wxkfq2-3 bFEMcp"
+        >
+          <div
+            class="options__text-sc-1wxkfq2-5 lelrqU"
+          >
+            Limit: 15
+          </div>
+          <div
+            class="options__buttons-sc-1wxkfq2-6 kXUnru"
+          >
+            <button
+              class="options__button-sc-1wxkfq2-4 bKjZNU"
+              data-testid="decreaseChangeLimit"
+            >
+              <svg
+                fill="none"
+                height="14"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="5"
+                  x2="19"
+                  y1="12"
+                  y2="12"
+                />
+              </svg>
+            </button>
+            <button
+              class="options__button-sc-1wxkfq2-4 bKjZNU"
+              data-testid="increaseChangeLimit"
+            >
+              <svg
+                fill="none"
+                height="14"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="14"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <line
+                  x1="12"
+                  x2="12"
+                  y1="5"
+                  y2="19"
+                />
+                <line
+                  x1="5"
+                  x2="19"
+                  y1="12"
+                  y2="12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="options__row-sc-1wxkfq2-2 sUSpG"
+      >
+        <div
+          class="options__title-sc-1wxkfq2-1 hNpzzn"
+        >
+          0 Spread (0.00%)
+        </div>
+      </div>
+    </div>
+    <div
+      class="orderbook__row-ypat8y-2 tzPOE"
+    >
+      <div
+        class="table__TableStyles-sc-1omlfwy-0 fMbACP"
+      >
+        <table>
+          <thead>
+            <tr>
+              <td>
+                TOTAL
+              </td>
+              <td>
+                SIZE
+              </td>
+              <td>
+                PRICE
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                12
+              </td>
+              <td>
+                12
+              </td>
+              <td>
+                <div
+                  class="typo__bid-b9ovmy-0 dfCUYX"
+                >
+                  30.00
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                1,012
+              </td>
+              <td>
+                1,000
+              </td>
+              <td>
+                <div
+                  class="typo__bid-b9ovmy-0 dfCUYX"
+                >
+                  10.00
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                1,132
+              </td>
+              <td>
+                120
+              </td>
+              <td>
+                <div
+                  class="typo__bid-b9ovmy-0 dfCUYX"
+                >
+                  2.00
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                1,134
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                <div
+                  class="typo__bid-b9ovmy-0 dfCUYX"
+                >
+                  1.00
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="table__TableStyles-sc-1omlfwy-0 fMbACP"
+      >
+        <table>
+          <thead>
+            <tr>
+              <td>
+                PRICE
+              </td>
+              <td>
+                SIZE
+              </td>
+              <td>
+                TOTAL
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__ask-b9ovmy-1 bZSXIY"
+                >
+                  30.00
+                </div>
+              </td>
+              <td>
+                12
+              </td>
+              <td>
+                12
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__ask-b9ovmy-1 bZSXIY"
+                >
+                  10.00
+                </div>
+              </td>
+              <td>
+                1,000
+              </td>
+              <td>
+                1,012
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__ask-b9ovmy-1 bZSXIY"
+                >
+                  2.00
+                </div>
+              </td>
+              <td>
+                120
+              </td>
+              <td>
+                1,132
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__ask-b9ovmy-1 bZSXIY"
+                >
+                  1.00
+                </div>
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                1,134
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components Orderbook matches connecting snapshot 1`] = `
 <DocumentFragment>
   <div
     class="orderbook__wrapper-ypat8y-1 gKWLzb"
@@ -28,6 +394,377 @@ exports[`Components Orderbook matches snapshot 1`] = `
           class="css-1cubgjj"
         />
       </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components Orderbook matches disconnected snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="orderbook__wrapper-ypat8y-1 gKWLzb"
+  >
+    Websocket connection closed. Retrying in 3 seconds...
+    <div
+      class="loading__Wrapper-e7lqu1-0 dNIoQG"
+    >
+      <span
+        class="css-0"
+      >
+        <span
+          class="css-t5z7rz"
+        />
+        <span
+          class="css-180eqmy"
+        />
+        <span
+          class="css-10qunde"
+        />
+        <span
+          class="css-1ct7tzo"
+        />
+        <span
+          class="css-1cubgjj"
+        />
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components Orderbook matches mobile connected snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="orderbook__wrapper-ypat8y-1 gKWLzb"
+  >
+    <div
+      class="orderbook__row-ypat8y-2 fPKbKR"
+    >
+      <div
+        class="table__TableStyles-sc-1omlfwy-0 fMbACP"
+      >
+        <table>
+          <thead>
+            <tr>
+              <td>
+                PRICE
+              </td>
+              <td>
+                SIZE
+              </td>
+              <td>
+                TOTAL
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__bid-b9ovmy-0 dfCUYX"
+                >
+                  30.00
+                </div>
+              </td>
+              <td>
+                12
+              </td>
+              <td>
+                12
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__bid-b9ovmy-0 dfCUYX"
+                >
+                  10.00
+                </div>
+              </td>
+              <td>
+                1,000
+              </td>
+              <td>
+                1,012
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__bid-b9ovmy-0 dfCUYX"
+                >
+                  2.00
+                </div>
+              </td>
+              <td>
+                120
+              </td>
+              <td>
+                1,132
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__bid-b9ovmy-0 dfCUYX"
+                >
+                  1.00
+                </div>
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                1,134
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div
+        class="options__wrapper-sc-1wxkfq2-0 iLoTFX"
+      >
+        <div
+          class="options__row-sc-1wxkfq2-2 sUSpG"
+        >
+          <div
+            class="options__column-sc-1wxkfq2-3 bFEMcp"
+          >
+            <div
+              class="options__text-sc-1wxkfq2-5 lelrqU"
+            >
+              Group: 0.5
+            </div>
+            <div
+              class="options__buttons-sc-1wxkfq2-6 kXUnru"
+            >
+              <button
+                class="options__button-sc-1wxkfq2-4 bKjZNU"
+                data-testid="decreaseChangeGroup"
+              >
+                <svg
+                  fill="none"
+                  height="14"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="5"
+                    x2="19"
+                    y1="12"
+                    y2="12"
+                  />
+                </svg>
+              </button>
+              <button
+                class="options__button-sc-1wxkfq2-4 bKjZNU"
+                data-testid="increaseChangeGroup"
+              >
+                <svg
+                  fill="none"
+                  height="14"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="12"
+                    x2="12"
+                    y1="5"
+                    y2="19"
+                  />
+                  <line
+                    x1="5"
+                    x2="19"
+                    y1="12"
+                    y2="12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            class="options__column-sc-1wxkfq2-3 bFEMcp"
+          >
+            <div
+              class="options__text-sc-1wxkfq2-5 lelrqU"
+            >
+              Limit: 15
+            </div>
+            <div
+              class="options__buttons-sc-1wxkfq2-6 kXUnru"
+            >
+              <button
+                class="options__button-sc-1wxkfq2-4 bKjZNU"
+                data-testid="decreaseChangeLimit"
+              >
+                <svg
+                  fill="none"
+                  height="14"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="5"
+                    x2="19"
+                    y1="12"
+                    y2="12"
+                  />
+                </svg>
+              </button>
+              <button
+                class="options__button-sc-1wxkfq2-4 bKjZNU"
+                data-testid="increaseChangeLimit"
+              >
+                <svg
+                  fill="none"
+                  height="14"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="14"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="12"
+                    x2="12"
+                    y1="5"
+                    y2="19"
+                  />
+                  <line
+                    x1="5"
+                    x2="19"
+                    y1="12"
+                    y2="12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="options__row-sc-1wxkfq2-2 sUSpG"
+        >
+          <div
+            class="options__title-sc-1wxkfq2-1 hNpzzn"
+          >
+            0 Spread (0.00%)
+          </div>
+        </div>
+      </div>
+      <div
+        class="table__TableStyles-sc-1omlfwy-0 fMbACP"
+      >
+        <table>
+          <thead>
+            <tr>
+              <td>
+                PRICE
+              </td>
+              <td>
+                SIZE
+              </td>
+              <td>
+                TOTAL
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__ask-b9ovmy-1 bZSXIY"
+                >
+                  1.00
+                </div>
+              </td>
+              <td>
+                2
+              </td>
+              <td>
+                1,134
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__ask-b9ovmy-1 bZSXIY"
+                >
+                  2.00
+                </div>
+              </td>
+              <td>
+                120
+              </td>
+              <td>
+                1,132
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__ask-b9ovmy-1 bZSXIY"
+                >
+                  10.00
+                </div>
+              </td>
+              <td>
+                1,000
+              </td>
+              <td>
+                1,012
+              </td>
+            </tr>
+            <tr
+              class="table__TableRow-sc-1omlfwy-1"
+            >
+              <td>
+                <div
+                  class="typo__ask-b9ovmy-1 bZSXIY"
+                >
+                  30.00
+                </div>
+              </td>
+              <td>
+                12
+              </td>
+              <td>
+                12
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </DocumentFragment>

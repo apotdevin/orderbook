@@ -3,9 +3,16 @@ import { OrderMocks } from 'src/hooks/mocks/orders';
 import { Asks } from '../asks';
 import { Bids } from '../bids';
 import { Header } from '../header';
+import { Loading } from '../loading';
 import { TableRow } from '../table';
 
 describe('Components', () => {
+  describe('Loading', () => {
+    test('matches snapshot', () => {
+      const { asFragment } = render(<Loading />);
+      expect(asFragment()).toMatchSnapshot();
+    });
+  });
   describe('Asks Table', () => {
     test('matches snapshot', () => {
       const { asFragment } = render(
