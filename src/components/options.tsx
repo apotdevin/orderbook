@@ -67,6 +67,7 @@ export const Options: FC<{ spread: number; price: number }> = ({
           <S.text>{`Group: ${groupStep}`}</S.text>
           <S.buttons>
             <S.button
+              data-testid={'decreaseChangeGroup'}
               onClick={() =>
                 dispatch({ type: 'changeGroup', group: group - 1 })
               }
@@ -74,6 +75,7 @@ export const Options: FC<{ spread: number; price: number }> = ({
               <Minus size={14} />
             </S.button>
             <S.button
+              data-testid={'increaseChangeGroup'}
               onClick={() =>
                 dispatch({ type: 'changeGroup', group: group + 1 })
               }
@@ -86,6 +88,7 @@ export const Options: FC<{ spread: number; price: number }> = ({
           <S.text>{`Limit: ${limit}`}</S.text>
           <S.buttons>
             <S.button
+              data-testid={'decreaseChangeLimit'}
               onClick={() =>
                 dispatch({ type: 'changeLimit', limit: limit - 5 })
               }
@@ -93,6 +96,7 @@ export const Options: FC<{ spread: number; price: number }> = ({
               <Minus size={14} />
             </S.button>
             <S.button
+              data-testid={'increaseChangeLimit'}
               onClick={() =>
                 dispatch({ type: 'changeLimit', limit: limit + 5 })
               }

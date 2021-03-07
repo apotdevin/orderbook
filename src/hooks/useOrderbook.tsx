@@ -1,10 +1,6 @@
 import { useEffect, useReducer } from 'react';
-import { w3cwebsocket as WebSocket } from 'websocket';
-import getConfig from 'next/config';
+import useWebSocket from 'react-use-websocket';
 import { getCurrentOrders, groupByPrice } from './helper';
-
-const { publicRuntimeConfig } = getConfig();
-const { wsUrl } = publicRuntimeConfig;
 
 export type OrderEntry = {
   price: number;
@@ -35,10 +31,6 @@ const defaultEntry = { price: 0, size: 0, depth: 0 };
 const initialState: State = { feed: '', product_id: '', asks: [], bids: [] };
 
 const reducer = (state: State, action: Action) => {
-  // if (state.asks.length > 50) {
-  //   return state;
-  // }
-
   const { data } = action;
 
   const { asks, bids, feed, product_id } = data;
@@ -49,45 +41,30 @@ const reducer = (state: State, action: Action) => {
   return { feed, product_id, asks: newAsks, bids: newBids };
 };
 
-export const useOrderbook = () => {
+export const useOrderbook = (url: string) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const { sendMessage, lastJsonMessage, readyState } = useWebSocket(url, {
+    retryOnError: true,
+    reconnectAttempts: 10,
+    reconnectInterval: 3000,
+  });
+
   useEffect(() => {
-    const client = new WebSocket(wsUrl);
+    if (readyState !== 1) return;
+    sendMessage(
+      JSON.stringify({
+        event: 'subscribe',
+        feed: 'book_ui_1',
+        product_ids: ['PI_XBTUSD'],
+      })
+    );
+  }, [readyState, sendMessage]);
 
-    client.onopen = () => {
-      console.log('WebSocket Client Connected');
-      client.send(
-        JSON.stringify({
-          event: 'subscribe',
-          feed: 'book_ui_1',
-          product_ids: ['PI_XBTUSD'],
-        })
-      );
-    };
-    client.onmessage = ({ data }) => {
-      if (typeof data === 'string') {
-        try {
-          const parsed = JSON.parse(data);
-          dispatch({ data: parsed });
-        } catch (error) {
-          console.warn('Unable to parse websocket data.');
-        }
-      } else {
-        console.warn('Websocket data is not string type');
-      }
-    };
-
-    client.onerror = () => {
-      console.log('Connection Error');
-    };
-
-    client.onclose = () => {
-      console.log('Client Closed');
-    };
-
-    return () => client.close();
-  }, []);
+  useEffect(() => {
+    if (!lastJsonMessage) return;
+    dispatch({ data: lastJsonMessage });
+  }, [lastJsonMessage]);
 
   const format = ({
     group,
@@ -109,5 +86,5 @@ export const useOrderbook = () => {
     ];
   };
 
-  return { ...state, format };
+  return { ...state, format, readyState };
 };

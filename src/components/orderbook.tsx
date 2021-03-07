@@ -37,11 +37,24 @@ const S = {
   `,
 };
 
-const OrderBook: FC = () => {
+const OrderBook: FC<{ url: string }> = ({ url }) => {
   const { groupStep, limit } = useContextState();
-  const { asks, bids, format } = useOrderbook();
+  const { asks, bids, format, readyState } = useOrderbook(url);
 
   const { width } = useWindowDimensions();
+
+  if (readyState < 1) {
+    return (
+      <S.wrapper>
+        Trying to connect to websocket...
+        <Loading />
+      </S.wrapper>
+    );
+  }
+
+  if (readyState > 1) {
+    return <S.wrapper>Websocket connection closed</S.wrapper>;
+  }
 
   const isMobile = width <= 600;
 

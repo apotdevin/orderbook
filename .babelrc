@@ -2,6 +2,7 @@
   "presets": ["next/babel"],
   "plugins": [
     "emotion",
+    "babel-plugin-dynamic-import-node",
     [
       "styled-components",
       { "ssr": true, "displayName": true, "preprocess": false }

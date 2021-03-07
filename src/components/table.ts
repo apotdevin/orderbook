@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Colors } from '../styles/Colors';
 
 export const TableStyles = styled.div`
@@ -33,19 +33,28 @@ export const TableStyles = styled.div`
   }
 `;
 
-export const TableRow = styled.tr<{
-  inverted?: boolean;
-  maxDepth: number;
-  currentValue: number;
-  left?: boolean;
-}>`
-  background-image: ${({ inverted, maxDepth, currentValue, left }) => {
+export const TableRow = styled.tr.attrs(
+  ({
+    inverted,
+    maxDepth,
+    currentValue,
+    left,
+  }: {
+    inverted?: boolean;
+    maxDepth: number;
+    currentValue: number;
+    left?: boolean;
+  }) => {
     const percent = 100 - Math.round((currentValue / maxDepth) * 100);
 
-    return inverted
-      ? css`linear-gradient(to left, transparent ${percent}%, ${Colors.lightRed} ${percent}%);`
-      : css`linear-gradient(to ${
+    const linearGradient = inverted
+      ? `linear-gradient(to left, transparent ${percent}%, ${Colors.lightRed} ${percent}%)`
+      : `linear-gradient(to ${
           left ? 'left' : 'right'
-        }, transparent ${percent}%, ${Colors.lightGreen} ${percent}%);`;
-  }};
-`;
+        }, transparent ${percent}%, ${Colors.lightGreen} ${percent}%)`;
+
+    return {
+      style: { backgroundImage: linearGradient },
+    };
+  }
+)``;

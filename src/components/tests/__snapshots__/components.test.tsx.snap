@@ -1,0 +1,451 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components Asks Table matches mobile snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="table__TableStyles-sc-1omlfwy-0 fMbACP"
+  >
+    <table>
+      <thead>
+        <tr>
+          <td>
+            PRICE
+          </td>
+          <td>
+            SIZE
+          </td>
+          <td>
+            TOTAL
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__ask-b9ovmy-1 bZSXIY"
+            >
+              30.00
+            </div>
+          </td>
+          <td>
+            7
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__ask-b9ovmy-1 bZSXIY"
+            >
+              10.00
+            </div>
+          </td>
+          <td>
+            1,000
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__ask-b9ovmy-1 bZSXIY"
+            >
+              2.00
+            </div>
+          </td>
+          <td>
+            120
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__ask-b9ovmy-1 bZSXIY"
+            >
+              1.00
+            </div>
+          </td>
+          <td>
+            100
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components Asks Table matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="table__TableStyles-sc-1omlfwy-0 fMbACP"
+  >
+    <table>
+      <thead>
+        <tr>
+          <td>
+            PRICE
+          </td>
+          <td>
+            SIZE
+          </td>
+          <td>
+            TOTAL
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__ask-b9ovmy-1 bZSXIY"
+            >
+              1.00
+            </div>
+          </td>
+          <td>
+            100
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__ask-b9ovmy-1 bZSXIY"
+            >
+              2.00
+            </div>
+          </td>
+          <td>
+            120
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__ask-b9ovmy-1 bZSXIY"
+            >
+              10.00
+            </div>
+          </td>
+          <td>
+            1,000
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__ask-b9ovmy-1 bZSXIY"
+            >
+              30.00
+            </div>
+          </td>
+          <td>
+            7
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components Bids Table matches mobile snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="table__TableStyles-sc-1omlfwy-0 fMbACP"
+  >
+    <table>
+      <thead>
+        <tr>
+          <td>
+            PRICE
+          </td>
+          <td>
+            SIZE
+          </td>
+          <td>
+            TOTAL
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__bid-b9ovmy-0 dfCUYX"
+            >
+              1.00
+            </div>
+          </td>
+          <td>
+            100
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__bid-b9ovmy-0 dfCUYX"
+            >
+              2.00
+            </div>
+          </td>
+          <td>
+            120
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__bid-b9ovmy-0 dfCUYX"
+            >
+              10.00
+            </div>
+          </td>
+          <td>
+            1,000
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            <div
+              class="typo__bid-b9ovmy-0 dfCUYX"
+            >
+              30.00
+            </div>
+          </td>
+          <td>
+            7
+          </td>
+          <td>
+            0
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components Bids Table matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="table__TableStyles-sc-1omlfwy-0 fMbACP"
+  >
+    <table>
+      <thead>
+        <tr>
+          <td>
+            TOTAL
+          </td>
+          <td>
+            SIZE
+          </td>
+          <td>
+            PRICE
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            0
+          </td>
+          <td>
+            100
+          </td>
+          <td>
+            <div
+              class="typo__bid-b9ovmy-0 dfCUYX"
+            >
+              1.00
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            0
+          </td>
+          <td>
+            120
+          </td>
+          <td>
+            <div
+              class="typo__bid-b9ovmy-0 dfCUYX"
+            >
+              2.00
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            0
+          </td>
+          <td>
+            1,000
+          </td>
+          <td>
+            <div
+              class="typo__bid-b9ovmy-0 dfCUYX"
+            >
+              10.00
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="table__TableRow-sc-1omlfwy-1"
+        >
+          <td>
+            0
+          </td>
+          <td>
+            7
+          </td>
+          <td>
+            <div
+              class="typo__bid-b9ovmy-0 dfCUYX"
+            >
+              30.00
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components Header matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="header__Wrapper-w5cr8-0 bJCuER"
+  >
+    Orderbook Example
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Components TableRow matches inverted left snapshot 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="table__TableRow-sc-1omlfwy-1"
+      >
+        <td>
+          1
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`Components TableRow matches inverted snapshot 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="table__TableRow-sc-1omlfwy-1"
+      >
+        <td>
+          1
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`Components TableRow matches left snapshot 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="table__TableRow-sc-1omlfwy-1"
+      >
+        <td>
+          1
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`Components TableRow matches snapshot 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="table__TableRow-sc-1omlfwy-1"
+      >
+        <td>
+          1
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

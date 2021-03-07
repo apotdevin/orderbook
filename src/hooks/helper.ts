@@ -62,7 +62,6 @@ export const groupByPrice = (
 
   prices.forEach(price => {
     const entry = grouped[price];
-    if (!entry) return;
 
     const reduced = entry.reduce(
       (prev, current) => {

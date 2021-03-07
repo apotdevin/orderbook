@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Global Styles are correctly generated in the head 1`] = `
+HTMLCollection [
+  <head>
+    <style
+      data-styled="active"
+      data-styled-version="5.2.1"
+    >
+      html,body{margin:0;padding:0;}
+      *,*::after,*::before{box-sizing:border-box;}
+      body{font-size:16px;background:rgba(0,0,0,0.87);color:white;font-family:'Roboto',sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+    </style>
+  </head>,
+]
+`;

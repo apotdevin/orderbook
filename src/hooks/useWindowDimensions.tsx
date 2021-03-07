@@ -7,12 +7,6 @@ export interface WindowDimensions {
 }
 
 export const getWindowDimensions = (): WindowDimensions => {
-  if (typeof window === 'undefined') {
-    return {
-      width: 0,
-      height: 0,
-    };
-  }
   const { innerWidth: width, innerHeight: height } = window;
 
   return {
@@ -27,8 +21,6 @@ export const useWindowDimensions = (delay = 250) => {
   );
 
   React.useEffect(() => {
-    if (typeof window === 'undefined') return;
-
     const handleResize = () => {
       setWindowDimensions(getWindowDimensions());
     };

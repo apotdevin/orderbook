@@ -1,6 +1,6 @@
 import { FC, createContext, useContext, useReducer } from 'react';
 
-const getStep = (x: number) => {
+export const getStep = (x: number) => {
   switch (x) {
     case 1:
       return 0.5;
