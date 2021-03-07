@@ -33,18 +33,15 @@ export const TableStyles = styled.div`
   }
 `;
 
-export const TableRow = styled.tr.attrs(
-  ({
-    inverted,
-    maxDepth,
-    currentValue,
-    left,
-  }: {
-    inverted?: boolean;
-    maxDepth: number;
-    currentValue: number;
-    left?: boolean;
-  }) => {
+type TableRowProps = {
+  inverted?: boolean;
+  maxDepth: number;
+  currentValue: number;
+  left?: boolean;
+};
+
+export const TableRow = styled.tr.attrs<TableRowProps>(
+  ({ inverted, maxDepth, currentValue, left }) => {
     const percent = 100 - Math.round((currentValue / maxDepth) * 100);
 
     const linearGradient = inverted
@@ -57,4 +54,4 @@ export const TableRow = styled.tr.attrs(
       style: { backgroundImage: linearGradient },
     };
   }
-)``;
+)<TableRowProps>``;

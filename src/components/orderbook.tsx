@@ -53,7 +53,12 @@ const OrderBook: FC<{ url: string }> = ({ url }) => {
   }
 
   if (readyState > 1) {
-    return <S.wrapper>Websocket connection closed</S.wrapper>;
+    return (
+      <S.wrapper>
+        Websocket connection closed. Retrying in 3 seconds...
+        <Loading />
+      </S.wrapper>
+    );
   }
 
   const isMobile = width <= 600;
