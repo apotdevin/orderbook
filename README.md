@@ -1,5 +1,7 @@
 # 🚀 Bitcoin Orderbook Example 🚀
 
+[![codecov](https://codecov.io/gh/apotdevin/orderbook/branch/master/graph/badge.svg?token=PG4TDP315G)](https://codecov.io/gh/apotdevin/orderbook) ![example workflow](https://github.com/apotdevin/orderbook/actions/workflows/master-ci.yml/badge.svg)
+
 **[Check out a running version here](https://orderbook.apotdevin.com/)** 👀
 
 ## Instructions to Run
@@ -30,7 +32,7 @@ yarn bs
 
 This command will **download necessary packages**, **build the application** and **run it**
 
-4. After a while the application should now be available at
+4. After a while the application should be available at
 
 ```bash
 http://localhost:3000
@@ -74,7 +76,7 @@ npm run dev
 yarn dev
 ```
 
-5. After a while the application should now be available at
+5. After a while the application should be available at
 
 ```bash
 http://localhost:3000
