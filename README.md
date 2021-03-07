@@ -1,6 +1,8 @@
-# 🚀 Bitcoin Orderbook Example 🚀
+<h1 align="center">
+🚀 Bitcoin Orderbook Example 🚀
+</h1>
 
-[![codecov](https://codecov.io/gh/apotdevin/orderbook/branch/master/graph/badge.svg?token=PG4TDP315G)](https://codecov.io/gh/apotdevin/orderbook) ![example workflow](https://github.com/apotdevin/orderbook/actions/workflows/master-ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/apotdevin/orderbook/branch/master/graph/badge.svg?token=PG4TDP315G)](https://codecov.io/gh/apotdevin/orderbook) ![example workflow](https://github.com/apotdevin/orderbook/actions/workflows/master-ci.yml/badge.svg) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **[Check out a running version here](https://orderbook.apotdevin.com/)** 👀
 
